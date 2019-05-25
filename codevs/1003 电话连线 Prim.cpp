@@ -42,7 +42,7 @@ void  prim() {
 
         for (int j = 1; j <= nums; j++) {
             if (!visit[j] && minn > cost[j]) {
-				minn = cost[j];
+                minn = cost[j];
                 index = j;
             }
         }
@@ -58,13 +58,15 @@ void  prim() {
                 result.push_back({ parent[index], index, city[index][parent[index]] });
             }
 
-            for (int j = 1; j <= nums; j++) {
-                if (!visit[j] && cost[j] > city[index][j]) {
-                    cost[j] = city[index][j];
-                    parent[j] = index;
-                }
-            }
+            
 
+        }
+
+        for (int j = 1; j <= nums; j++) {
+            if (!visit[j] && cost[j] > city[index][j]) {
+                cost[j] = city[index][j];
+                parent[j] = index;
+            }
         }
 
     }
@@ -89,6 +91,5 @@ int main() {
     }
     cout << res << endl;
 
-    system("pause");
     return 0;
 }
