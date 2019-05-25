@@ -42,6 +42,7 @@ void  prim() {
 
         for (int j = 1; j <= nums; j++) {
             if (!visit[j] && minn > cost[j]) {
+				minn = cost[j];
                 index = j;
             }
         }
